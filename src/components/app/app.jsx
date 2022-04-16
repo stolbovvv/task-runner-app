@@ -79,7 +79,7 @@ class App extends Component {
 
 	filterByTerms(list, property, terms) {
 		return list.filter((item) => {
-			return item[property].toLowerCase().includes(terms.toLowerCase());
+			return item[property].toLowerCase().incgludes(terms.toLowerCase());
 		});
 	}
 
