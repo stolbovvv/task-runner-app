@@ -1,0 +1,14 @@
+.app-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 1.5em;
+	background-color: var(--clr-brown);
+}
+
+.app-footer__developer,
+.app-footer__copyright {
+	padding-inline: 1.14285em;
+	font-size: 0.875em;
+	color: var(--clr-brown-dark);
+}

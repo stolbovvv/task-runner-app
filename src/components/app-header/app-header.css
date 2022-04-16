@@ -1,0 +1,41 @@
+.app-header {
+	display: flex;
+	align-items: center;
+	min-height: 3em;
+	padding-inline: 0.5em;
+	background-color: var(--clr-brown);
+}
+
+.app-header__logo {
+	flex: 1 1 auto;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo__icon {
+	font-size: 2em;
+	margin-right: 0.3125em;
+}
+
+.logo__name {
+	font-size: 1.5em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.app-header__info {
+	padding-inline: 0.5em;
+	font-size: 1em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.app-header__info_blue {
+	color: var(--clr-blue);
+}
+.app-header__info_green {
+	color: var(--clr-green);
+}
