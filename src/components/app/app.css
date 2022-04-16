@@ -1,5 +1,5 @@
 .app {
-	height: 100%;
+	min-height: 100vh;
 	background-color: var(--clr-brown-dark);
 	color: var(--clr-grey);
 }
@@ -8,7 +8,7 @@
 	--flow-space: 0.0625em;
 
 	max-width: 60em;
-	max-height: 100vh;
+	min-height: 100vh;
 	margin-inline: auto;
 	padding-block: 2em;
 	padding-inline: 1em;

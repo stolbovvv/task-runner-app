@@ -4,11 +4,13 @@ import AppHeader from '../app-header/app-header';
 import AppFooter from '../app-footer/app-footer';
 import TaskFilter from '../task-filter/task-filter';
 import TaskList from '../task-list/task-list';
+import TaskAddForm from '../task-add-form/task-add-form';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			last: 5,
 			data: [
 				{ id: 1, name: 'Repeat material', isComplete: true, isImportant: false },
 				{ id: 2, name: 'Create app design', isComplete: true, isImportant: false },
@@ -21,6 +23,20 @@ class App extends Component {
 			},
 		};
 	}
+
+	addTask = (name) => {
+		const task = {
+			id: this.state.last,
+			name: name,
+			isComplete: false,
+			isImportant: false,
+		};
+
+		this.setState(({ data, last }) => ({
+			last: (last += 1),
+			data: [...data, task],
+		}));
+	};
 
 	completeTask = (id) => {
 		this.setState(({ data }) => ({
@@ -79,7 +95,7 @@ class App extends Component {
 
 	filterByTerms(list, property, terms) {
 		return list.filter((item) => {
-			return item[property].toLowerCase().incgludes(terms.toLowerCase());
+			return item[property].toLowerCase().includes(terms.toLowerCase());
 		});
 	}
 
@@ -93,7 +109,7 @@ class App extends Component {
 				<div className="app-container flow">
 					<AppHeader data={data} />
 					<div className="app-divider"></div>
-					<TaskFilter filter={filter} onChangeTerms={this.changeTerms} onChangeFilter={this.changeFilter} />
+					<TaskFilter filter={filter} onInputTerms={this.changeTerms} onSelectFilter={this.changeFilter} />
 					<div className="app-divider"></div>
 					<TaskList
 						tasks={tasks}
@@ -102,6 +118,7 @@ class App extends Component {
 						onMakeTaskImportant={this.makeTaskImportant}
 					/>
 					<div className="app-divider"></div>
+					<TaskAddForm onSubmitTask={this.addTask} />
 					<div className="app-divider"></div>
 					<AppFooter />
 				</div>

@@ -1,7 +1,7 @@
 import './task-filter.css';
 
 const TaskFilter = (props) => {
-	const { filter, onChangeFilter, onChangeTerms } = props;
+	const { filter, onSelectFilter, onInputTerms } = props;
 
 	const buttonData = [
 		{ id: 1, name: 'all' },
@@ -19,7 +19,7 @@ const TaskFilter = (props) => {
 				name={item.name}
 				data-type={type}
 				onClick={(e) => {
-					onChangeFilter(e);
+					onSelectFilter(e);
 				}}>
 				{item.name}
 			</button>
@@ -32,7 +32,7 @@ const TaskFilter = (props) => {
 				<input
 					type="text"
 					value={filter.terms}
-					onChange={(e) => onChangeTerms(e)}
+					onInput={(e) => onInputTerms(e)}
 					placeholder="Find a task and/or filter them"
 				/>
 				<i className="bx bx-search"></i>
