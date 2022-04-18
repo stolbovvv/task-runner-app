@@ -25,12 +25,12 @@
 }
 
 /* item type checked */
-.task-item[data-type='complete'] > label > span {
+.task-item[data-type='completed'] > label > span {
 	color: var(--clr-grey);
 	text-decoration: line-through;
 }
 
-.task-item[data-type='complete'] > [data-type='star'] {
+.task-item[data-type='completed'] > [data-type='star'] {
 	display: none;
 }
 

@@ -12,10 +12,10 @@ class App extends Component {
 		this.state = {
 			last: 5,
 			data: [
-				{ id: 1, name: 'Repeat material', isComplete: true, isImportant: false },
-				{ id: 2, name: 'Create app design', isComplete: true, isImportant: false },
-				{ id: 3, name: 'Create application', isComplete: false, isImportant: true },
-				{ id: 4, name: 'Check application', isComplete: false, isImportant: false },
+				{ id: 1, name: 'Repeat material', isCompleted: true, isImportant: false },
+				{ id: 2, name: 'Create app design', isCompleted: true, isImportant: false },
+				{ id: 3, name: 'Create application', isCompleted: false, isImportant: true },
+				{ id: 4, name: 'Check application', isCompleted: false, isImportant: false },
 			],
 			filter: {
 				type: 'all',
@@ -28,7 +28,7 @@ class App extends Component {
 		const task = {
 			id: this.state.last,
 			name: name,
-			isComplete: false,
+			isCompleted: false,
 			isImportant: false,
 		};
 
@@ -38,11 +38,11 @@ class App extends Component {
 		}));
 	};
 
-	completeTask = (id) => {
+	completedTask = (id) => {
 		this.setState(({ data }) => ({
 			data: data.map((item) => {
 				if (item.id === id) {
-					return { ...item, isComplete: !item.isComplete };
+					return { ...item, isCompleted: !item.isCompleted };
 				}
 				return item;
 			}),
@@ -80,12 +80,12 @@ class App extends Component {
 		switch (type) {
 			case 'active':
 				return list.filter((item) => {
-					return !item.isComplete;
+					return !item.isCompleted;
 				});
 
-			case 'complete':
+			case 'completed':
 				return list.filter((item) => {
-					return item.isComplete;
+					return item.isCompleted;
 				});
 
 			default:
@@ -113,8 +113,9 @@ class App extends Component {
 					<div className="app-divider"></div>
 					<TaskList
 						tasks={tasks}
+						filter={filter}
 						onDeleteTask={this.deleteTask}
-						onCompleteTask={this.completeTask}
+						onCompletedTask={this.completedTask}
 						onMakeTaskImportant={this.makeTaskImportant}
 					/>
 					<div className="app-divider"></div>

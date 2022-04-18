@@ -8,6 +8,11 @@
 	margin-left: 0.0625em;
 }
 
+.task-add-form[data-error='true'] > * > input[type='text'],
+.task-add-form[data-error='true'] > * > input[type='text']:focus-visible {
+	outline: 0.25em solid var(--clr-red);
+}
+
 .task-add-form__input-name {
 	display: flex;
 	align-items: center;
@@ -49,4 +54,26 @@
 
 .task-add-form__buttons > * + * {
 	margin-left: 0.0625em;
+}
+
+.form-error-message {
+	display: flex;
+	align-items: center;
+	padding-block: 0.25em;
+	padding-inline: 1em;
+	background-color: var(--clr-brown);
+	color: var(--clr-red);
+}
+
+.form-error-message i {
+	font-size: 1em;
+	margin-right: 0.625em;
+}
+
+.form-error-message span {
+	font-size: 0.75em;
+}
+
+.form-error-message[data-error='false'] {
+	display: none;
 }

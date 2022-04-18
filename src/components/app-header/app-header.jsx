@@ -5,7 +5,7 @@ const AppHeader = (props) => {
 	let numDoneTasks = 0;
 
 	props.data.forEach((item) => {
-		if (item.isComplete) {
+		if (item.isCompleted) {
 			numDoneTasks += 1;
 		} else {
 			numToDoTasks += 1;

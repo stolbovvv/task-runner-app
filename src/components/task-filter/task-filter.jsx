@@ -6,7 +6,7 @@ const TaskFilter = (props) => {
 	const buttonData = [
 		{ id: 1, name: 'all' },
 		{ id: 2, name: 'active' },
-		{ id: 3, name: 'complete' },
+		{ id: 3, name: 'completed' },
 	];
 
 	const buttons = buttonData.map((item) => {

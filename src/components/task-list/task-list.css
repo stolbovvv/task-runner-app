@@ -9,3 +9,25 @@
 .task-list > * {
 	margin-top: 0.0625em;
 }
+
+.task-list-message {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-block: 0.75em;
+	padding-inline: 1em;
+	background-color: var(--clr-brown);
+	color: var(--clr-grey);
+}
+
+.task-list-message > * + * {
+	margin-top: 0.375em;
+}
+
+.task-list-message > span:nth-child(1) {
+	font-size: 1.25em;
+}
+
+.task-list-message > span:nth-child(2) {
+	font-size: 0.875em;
+}
